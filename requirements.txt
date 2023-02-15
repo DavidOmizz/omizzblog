@@ -1,0 +1,20 @@
+asgiref==3.5.2
+certifi @ file:///C:/Windows/TEMP/abs_e9b7158a-aa56-4a5b-87b6-c00d295b01fanefpc8_o/croots/recipe/certifi_1655968940823/work/certifi
+Django==4.0.6
+django-admin-interface==0.24.2
+django-ckeditor==6.5.1
+django-colorfield==0.8.0
+django-cors-headers==3.13.0
+django-crispy-forms==1.14.0
+django-filter==22.1
+django-jazzmin==2.6.0
+django-js-asset==2.0.0
+django-quill-editor==0.1.40
+django-tinymce==3.4.0
+djangorestframework==3.14.0
+mysqlclient==2.1.1
+Pillow==9.2.0
+pytz==2022.7
+sqlparse==0.4.2
+tzdata==2022.1
+wincertstore==0.2

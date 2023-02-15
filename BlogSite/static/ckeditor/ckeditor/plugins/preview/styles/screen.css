@@ -1,0 +1,49 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+div[style*="page-break-after"] {
+	background:url( ../images/pagebreak.gif ) no-repeat center center;
+	clear:both;
+	width:100%;
+	border-top:#999 1px dotted;
+	border-bottom:#999 1px dotted;
+	padding:0;
+	height:7px;
+	cursor:default;
+}
+=======
+div[style*="page-break-after"] {
+	background:url( ../images/pagebreak.gif ) no-repeat center center;
+	clear:both;
+	width:100%;
+	border-top:#999 1px dotted;
+	border-bottom:#999 1px dotted;
+	padding:0;
+	height:7px;
+	cursor:default;
+}
+>>>>>>> 994af625642c0b36d97cfdfb580e32c3df4b4e7c
+=======
+div[style*="page-break-after"] {
+	background:url( ../images/pagebreak.gif ) no-repeat center center;
+	clear:both;
+	width:100%;
+	border-top:#999 1px dotted;
+	border-bottom:#999 1px dotted;
+	padding:0;
+	height:7px;
+	cursor:default;
+}
+>>>>>>> 994af625642c0b36d97cfdfb580e32c3df4b4e7c
+=======
+div[style*="page-break-after"] {
+	background:url( ../images/pagebreak.gif ) no-repeat center center;
+	clear:both;
+	width:100%;
+	border-top:#999 1px dotted;
+	border-bottom:#999 1px dotted;
+	padding:0;
+	height:7px;
+	cursor:default;
+}
+>>>>>>> origin/master
