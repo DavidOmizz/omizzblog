@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIRS = BASE_DIR / 'templates'
 STATIC_DIR = BASE_DIR / "static"
 MEDIA_ROOT = BASE_DIR / "media"
-STATIC_ROOT = '/home/Omizz/MyBlog/BlogSite/static'
+STATIC_ROOT = '/home/Omizz/omizz/BlogSite/static'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
