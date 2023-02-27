@@ -37,7 +37,7 @@ def BlogList (request):
     blog_latest = Post.objects.filter(status=1).order_by('-created_on')[:2]
     page = request.GET.get('page', 1)
     x = blog_list.count()
-    y = x/1
+    y = x/2
     paginator = Paginator(blog_list,y) # Show 25 contacts per page.]
     # page_number = request.GET.get('page')
     # page_obj = paginator.get_page(page_number)
@@ -56,25 +56,25 @@ def BlogList (request):
     # if not query:
     #     return messages.warning('This is full')
     if not posts:
-        messages.success(request, 'No content found!.') 
+        messages.warning(request, 'No content found!.') 
         
 
 
     return render(request, template_name, {"blog_list":blog_list, 'posts': posts, 'blog_latest':blog_latest})
 
-# class BlogSearchView(generic.ListView):
-#     model = Post
-#     template_name = "blog.html"
-#     context_object_name = 'posts'
+class BlogSearchView(generic.ListView):
+    model = Post
+    template_name = "blog.html"
+    context_object_name = 'posts'
 
-#     def get_queryset(self):
-#         query = self.request.GET.get('q')
-#         if query:
-#             object_list = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query)).order_by('-created_on')
-#             return object_list
-#         else:
-#             object_list = Post.objects.all()
-#             return object_list
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            posts = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query)).order_by('-created_on')
+            return posts
+        else:
+            posts = Post.objects.all()
+            return posts
 
 
         # if not query:
