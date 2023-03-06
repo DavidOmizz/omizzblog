@@ -9,7 +9,7 @@ from django.shortcuts import redirect
 from django.db.models import Q
 from django.contrib import messages
 from django.http import Http404
-
+from django.db.models import Count
 
 # class BlogList(generic.ListView):
 #     queryset = Post.objects.filter(status=1).order_by('-created_on')
@@ -32,8 +32,8 @@ def custom_500(request):
 
 def BlogList (request):
     template_name = 'blog.html'
-    blog_list = Post.objects.all()
-    # blog_list = Post.objects.filter(status=1).order_by('-created_on')
+    # blog_list = Post.objects.all()
+    blog_list = Post.objects.filter(status=1).order_by('-created_on')
     blog_latest = Post.objects.filter(status=1).order_by('-created_on')[:2]
     page = request.GET.get('page', 1)
     x = blog_list.count()
@@ -130,6 +130,8 @@ def post_detail(request, slug):
     blog_latest = Post.objects.filter(status=1).order_by('-created_on')[:2]
     blogside = Post.objects.all().order_by('-created_on')[:4]
     post = get_object_or_404(Post, slug=slug)
+    post.views += 1
+    post.save()
     comments = post.comments.filter(active=True)
     new_comment = None
     # Comment posted

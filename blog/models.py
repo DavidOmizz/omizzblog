@@ -18,6 +18,7 @@ class Post(models.Model):
     created_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     image = models.ImageField()
+    views = models.PositiveIntegerField(default=0)
 
     class Meta:
         ordering = ['-created_on']
