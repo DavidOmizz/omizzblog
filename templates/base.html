@@ -149,8 +149,8 @@
                 <h3 class="heading"><a href="#">{{ bl.title }}</a></h3>
                 <div class="meta">
                   <div><a href="#">{{ bl.created_on }}</a></div>
-                  <div><a href="#">{{ bl.author }}</a></div>
-                  <div><a href="#">19</a></div>
+                  <!-- <div><a href="#">{{ bl.author }}</a></div>
+                  <div><a href="#">19</a></div> -->
                 </div>
               </div>
             </div>
@@ -171,13 +171,8 @@
 					<div class="col-md-6 col-lg-3 pl-lg-5 mb-4 mb-md-0">
 						<h2 class="footer-heading">Quick Links</h2>
 						<ul class="list-unstyled">
-              <!-- <li><a href="#" class="py-2 d-block">Home</a></li>
-              <li><a href="#" class="py-2 d-block">About</a></li>
-              <li><a href="#" class="py-2 d-block">Services</a></li>
-              <li><a href="#" class="py-2 d-block">Works</a></li> -->
               <li><a href="#" class="py-2 d-block">Blog</a></li>
               <li><a href="#" class="py-2 d-block">My Porfolio</a></li>
-              <!-- <li><a href="#" class="py-2 d-block">Contact</a></li> -->
             </ul>
 					</div>
 					<div class="col-md-6 col-lg-3 mb-4 mb-md-0">
@@ -197,7 +192,8 @@
 
             <p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
               <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="fa fa-heart" aria-hidden="true"></i> by <a href="" target="_blank">DavidOmizz</a> -->
-              Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="https://davidomizz.pythonanywhere.com/" target="_blank">DavidOmizz</a>
+              Copyright &copy;{% now "Y" %} All rights reserved by <a href="https://davidomizz.pythonanywhere.com/" target="_blank">DavidOmizz</a>
+              <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by <a href="https://davidomizz.pythonanywhere.com/" target="_blank">DavidOmizz</a> -->
               <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
           </div>
         </div>

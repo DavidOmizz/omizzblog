@@ -148,10 +148,15 @@ def post_detail(request, slug):
     else:
         comment_form = CommentForm()
 
-    return render(request, template_name, {'post': post,
-                                           'comments': comments,
-                                           'new_comment': new_comment,
-                                           'comment_form': comment_form,"blogside":blogside, 'blog_latest':blog_latest})
+    context = {
+        'post': post,
+        'comments': comments,
+        'new_comment': new_comment,
+        'comment_form': comment_form,
+        "blogside":blogside, 'blog_latest':blog_latest,
+    }
+
+    return render(request, template_name, context)
 
 
 
