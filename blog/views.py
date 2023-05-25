@@ -1,6 +1,6 @@
 
 from django.views import generic
-from .models import Post
+from .models import Post, Category
 from .forms import CommentForm
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator,EmptyPage, PageNotAnInteger
@@ -35,6 +35,7 @@ def BlogList (request):
     # blog_list = Post.objects.all()
     blog_list = Post.objects.filter(status=1).order_by('-created_on')
     blog_latest = Post.objects.filter(status=1).order_by('-created_on')[:2]
+    category = Category.objects.all()
     page = request.GET.get('page', 1)
     x = blog_list.count()
     y = x/2
@@ -49,8 +50,15 @@ def BlogList (request):
         posts = paginator.page(paginator.num_pages)
 
     query = request.GET.get('q')
+    selected_category = request.GET.get('category')
+
     if query:
         posts = Post.objects.filter(Q(title__icontains=query) | Q(content__icontains=query)).order_by('-created_on')
+
+    # elif selected_category:
+    #     posts = Post.objects.filter(title__icontains=selected_category)
+    elif selected_category:
+        posts = Post.objects.filter(category__title__icontains=selected_category)
     else:
         posts = Post.objects.all()
     # if not query:
@@ -60,7 +68,7 @@ def BlogList (request):
         
 
 
-    return render(request, template_name, {"blog_list":blog_list, 'posts': posts, 'blog_latest':blog_latest})
+    return render(request, template_name, {"blog_list":blog_list, 'posts': posts, 'blog_latest':blog_latest, 'category':category})
 
 class BlogSearchView(generic.ListView):
     model = Post

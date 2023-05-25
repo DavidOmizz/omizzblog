@@ -5,7 +5,27 @@
 {% endblock %}
 
 {% block content %}
+
     <section class="ftco-section bg-light">
+      
+      <!-- <div class="category-list" id="category-list" style="width: 50%; margin: 0 auto;">
+        <ul style="list-style-type: none; display: flex; justify-content: center; color: white;">
+          {% for cat in category %}
+            <li style="margin: 5px; background-color: blue; padding: 7px 10px;"><a href="" style="color: white;">{{ cat }}</a></li>
+          {% endfor %}
+        </ul>
+      </div> -->
+
+      <div class="category-list" id="category-list" style="width: 50%; margin: 0 auto;">
+        <ul style="list-style-type: none; display: flex; justify-content: center; color: white;">
+          {% for cat in category %}
+            <li style="margin: 5px; background-color: blue; padding: 7px 10px;">
+              <a href="?category={{ cat }}" style="color: white;">{{ cat }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      
       <div class="container">
         {% if messages %} 
           <!-- {% for message in messages %}  -->
