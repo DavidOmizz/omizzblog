@@ -225,7 +225,14 @@
   <script src="{% static 'js/google-map.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
 
-
+  <script id="wpcp_disable_Right_Click" type="text/javascript">
+    document.ondragstart = function() { return false;}
+        function nocontext(e) {
+           return false;
+        }
+        document.oncontextmenu = nocontext;
+        document.oncopy = ()=> {return false;}
+    </script>
     
 </body>
 </html>
