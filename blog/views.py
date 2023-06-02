@@ -24,6 +24,12 @@ def custom_404(request, exception):
     return render(request, 'error.html')
 def custom_500(request):
     return render(request, 'error.html')
+
+def adsense(request):
+    ads_text_path = 'static/ads.txt'
+    with open(ads_text_path, 'r') as file:
+        content = file.read()
+    return HttpResponse(content, content_type='text/plain')
 # def custom_500(request):
 #     return render(request, '505')
 
