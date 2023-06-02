@@ -11,6 +11,8 @@ from django.contrib import messages
 from django.http import Http404
 from django.db.models import Count
 
+
+from django.contrib.staticfiles import finders
 # class BlogList(generic.ListView):
 #     queryset = Post.objects.filter(status=1).order_by('-created_on')
 #     template_name = 'blog.html'
@@ -26,8 +28,9 @@ def custom_500(request):
     return render(request, 'error.html')
 
 def adsense(request):
-    ads_text_path = 'static/ads.txt'
-    with open(ads_text_path, 'r') as file:
+    # ads_text_path = 'static/ads.txt'
+    ads_txt_path = finders.find('ads.txt')
+    with open(ads_txt_path, 'r') as file:
         content = file.read()
     return HttpResponse(content, content_type='text/plain')
 # def custom_500(request):
