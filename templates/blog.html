@@ -18,6 +18,7 @@
 
       <div class="category-list" id="category-list" style="width: 50%; margin: 0 auto;">
         <ul style="list-style-type: none; display: flex; justify-content: center; color: white;">
+          <a href="?category={{ cat }}" style="color: rgb(210, 10, 10);">All</a>
           {% for cat in category %}
             <li style="margin: 5px; background-color: blue; padding: 7px 10px;">
               <a href="?category={{ cat }}" style="color: white;">{{ cat }}</a>
