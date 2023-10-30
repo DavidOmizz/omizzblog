@@ -18,9 +18,11 @@
 
       <div class="category-list" id="category-list" style="width: 50%; margin: 0 auto;">
         <ul style="list-style-type: none; display: flex; justify-content: center; color: white;">
-          <a href="?category={{ cat }}" style="color: rgb(210, 10, 10);">All</a>
+          <li style="margin: 5px; padding: 7px 10px; border-radius: 10px;" class="bg-primary">
+            <a href="?category=" style="color: white;">All</a>
+          </li>
           {% for cat in category %}
-            <li style="margin: 5px; background-color: blue; padding: 7px 10px;">
+            <li style="margin: 5px; padding: 7px 10px; border-radius: 10px;" class="bg-primary">
               <a href="?category={{ cat }}" style="color: white;">{{ cat }}</a>
             </li>
           {% endfor %}
