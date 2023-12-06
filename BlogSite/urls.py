@@ -26,7 +26,7 @@ urlpatterns = [
 
 ]
 
-# handler404 = 'blog.views.error_404_view'
+handler404 = 'blog.views.custom_404'
 
 
 

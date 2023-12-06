@@ -31,7 +31,7 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 SECRET_KEY = 'django-insecure-=7-v!@ra^&bznlj6*@^fo*%$@s+u_gy8)@&)xevleh*w(8ay6s'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
