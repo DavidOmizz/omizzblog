@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="icon" href="{% static 'images/logo.png' %}" type="image/icon type">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9186236776152664"
      crossorigin="anonymous"></script>
 
@@ -224,15 +226,74 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="{% static 'js/google-map.js' %}"></script>
   <script src="{% static 'js/main.js' %}"></script>
+  
 
-  <script id="wpcp_disable_Right_Click" type="text/javascript">
+  <script>
+    window.addEventListener('load', function() {
+            if (navigator.onLine) {
+                // User is online
+                // alert('You are currently online.');
+                // Toastify({
+                //     text: 'You are currently online',
+                //     duration: 3000,
+                //     gravity: 'bottom',
+                //     position: 'center',
+                //     close: true,
+                //     backgroundColor: 'green',
+                //     stopOnFocus: true,
+                // }).showToast();
+
+            } else {
+                // User is offline
+                // alert('You are currently offline. Please check your internet connection.');
+                Toastify({
+                    text: 'You are currently offline. Please check your internet connection.',
+                    duration: 5000,
+                    gravity: 'bottom',
+                    position: 'center',
+                    close: true,
+                    backgroundColor: 'red',
+                    stopOnFocus: true,
+                }).showToast();
+            }
+
+            // Event listener to handle online/offline changes
+            window.addEventListener('online', function() {
+                Toastify({
+                    text: 'You are now online.',
+                    duration: 3000,
+                    gravity: 'bottom',
+                    position: 'center',
+                    close: true,
+                    backgroundColor: 'green',
+                    stopOnFocus: true,
+                }).showToast();
+                // alert('You are now online.');
+            });
+
+            window.addEventListener('offline', function() {
+                // alert('You are now offline. Please check your internet connection.');
+                Toastify({
+                    text: 'You are now offline. Please check your internet connection.',
+                    duration: 5000,
+                    gravity: 'bottom',
+                    position: 'center',
+                    close: true,
+                    backgroundColor: 'red',
+                    stopOnFocus: true,
+                }).showToast();
+            });
+        });
+  </script>
+
+  <!-- <script id="wpcp_disable_Right_Click" type="text/javascript">
     document.ondragstart = function() { return false;}
         function nocontext(e) {
            return false;
         }
         document.oncontextmenu = nocontext;
         document.oncopy = ()=> {return false;}
-    </script>
+    </script> -->
     
 </body>
 </html>
